@@ -9,7 +9,9 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "coffeescript": "^2.3.2",
     "vue": "^2.5.3",
+    "vue-the-mask": "^0.11.1",
     "vuetify": "^1.0.0"
   },
   "devDependencies": {
@@ -17,10 +19,13 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
+    "coffee-loader": "^0.9.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "node-sass": "^4.5.3",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",

@@ -1,6 +1,12 @@
-# electron-builder
+<div align='center'>
+  <h1>Electron Builder</h1>
+  <p>App based on Pauling's diagram that generates the electronic distribution of the periodic table elements</p>
+  <a href='https://tecice.github.io/electron-builder'>
+    <img align='right' src='https://forthebadge.com/images/badges/check-it-out.svg'>
+  </a>
 
-> Electron configuration generator
+</div>
+<br/>
 
 ## Build Setup
 
@@ -14,5 +20,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
