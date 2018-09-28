@@ -1,15 +1,16 @@
 <div align='center'>
-  <img width='250' height='250' src='public/icon.svg'>
+  <img width='200' height='200' src='public/icon.svg'>
   <h1>
     Electron Builder
     <sup>e<sup>-</sup></sup>
   </h1>
   <p>App based on Pauling's diagram that generates the electronic distribution of the periodic table elements</p>
-  <a href='https://tecice.github.io/electron-builder'>
+  <a href='https://felixluciano.github.io/electron-builder'>
     <img align='right' src='public/check-button.png'>
   </a>
-
+m
 </div>
+<br/>
 <br/>
 
 ## Build Setup
