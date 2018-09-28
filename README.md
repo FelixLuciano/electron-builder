@@ -8,7 +8,6 @@
   <a href='https://felixluciano.github.io/electron-builder'>
     <img align='right' src='public/check-button.png'>
   </a>
-m
 </div>
 <br/>
 <br/>
