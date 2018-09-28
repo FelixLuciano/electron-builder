@@ -5,8 +5,9 @@
     <sup>e<sup>-</sup></sup>
   </h1>
   <p>App based on Pauling's diagram that generates the electronic distribution of the periodic table elements</p>
+  <br/>
   <a href='https://felixluciano.github.io/electron-builder'>
-    <img align='right' src='public/check-button.png'>
+    <img align='right' width='150' src='public/check-button.png'>
   </a>
 </div>
 <br/>
