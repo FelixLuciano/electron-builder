@@ -31,7 +31,7 @@
         thumb-label
         min='1'
         max='118'
-        color='light-blue lighten-1'
+        color='teal accent-4'
         append-icon='keyboard_arrow_right'
         prepend-icon='keyboard_arrow_left'
         @input='updateElectrons(), updateElementName()'
@@ -186,7 +186,7 @@
 <style lang='sass'>
 
   \:root
-    --main-color: #29B6F6
+    --main-color: #00BFA5
 
   html
     overflow: hidden

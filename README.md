@@ -1,8 +1,12 @@
 <div align='center'>
-  <h1>Electron Builder</h1>
+  <img width='250' height='250' src='public/icon.svg'>
+  <h1>
+    Electron Builder
+    <sup>e<sup>-</sup></sup>
+  </h1>
   <p>App based on Pauling's diagram that generates the electronic distribution of the periodic table elements</p>
   <a href='https://tecice.github.io/electron-builder'>
-    <img align='right' src='https://forthebadge.com/images/badges/check-it-out.svg'>
+    <img align='right' src='public/check-button.png'>
   </a>
 
 </div>
