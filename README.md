@@ -25,3 +25,9 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2018-present, Luciano Felix
