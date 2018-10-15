@@ -7,7 +7,7 @@
   <p>App based on Pauling's diagram that generates the electronic distribution of the periodic table elements</p>
   <br/>
   <a href='https://felixluciano.github.io/electron-builder'>
-    <img align='right' width='150' src='public/check-button.png'>
+    <img align='right' src='public/check-it-out--button.png'>
   </a>
 </div>
 <br/>
