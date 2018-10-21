@@ -1,4 +1,5 @@
 <template lang='pug'>
+
   v-app#App
 
     v-layout.layout-1(align-center justify-center): #atom
@@ -32,8 +33,8 @@
         min='1'
         max='118'
         color='teal accent-4'
-        append-icon='keyboard_arrow_right'
-        prepend-icon='keyboard_arrow_left'
+        append-icon='mdi-chevron-right'
+        prepend-icon='mdi-chevron-left'
         @input='updateElectrons(), updateElementName()'
         @click:append='increment(1), updateElementName()'
         @click:prepend='increment(-1), updateElementName()'
@@ -56,15 +57,58 @@
         )
           span(v-if="typeof item === 'object'") {{ item.location }}
             sup {{ item.electrons }}
-          span(v-else): i.material-icons more_horiz
+          span(v-else)
+            v-icon(color='teal accent-4') mdi-dots-horizontal
 
         span.input-error(v-if = '!notation.length') Invalid input
 
 
 
-    v-tooltip(left)
-      v-btn(flat icon fab fixed top right slot='activator' v-show='electrons > 0' @click='googleSearchElement' color='blue-grey darken-1'): v-icon search
-      span Seach on Google
+    v-toolbar.px-4(flat fixed color='transparent')
+
+      v-spacer
+
+      v-btn(flat round color='teal lighten-1' @click='infoDialog = true')
+        v-icon mdi-information-variant
+
+      v-tooltip(bottom)
+        v-btn(flat fab color='teal lighten-1' slot='activator' :disabled='electrons < 1' @click='googleSearchElement')
+          v-icon mdi-magnify
+        span Seach on Google
+
+
+
+    v-dialog(scrollable max-width='500px' v-model='infoDialog')
+      v-card(max-width='500px')
+
+        v-card-title.pt-4
+          v-layout(row no-wrap)
+
+            img(height='32' src='public/icon.svg')
+
+            v-divider.ml-3.mr-2(vertical)
+
+            .headline.text-truncate.teal--text.text--accent-4 {{ 'Electron Builder ' }}
+              sup e
+                sup -
+
+
+        v-card-text
+          v-layout(row wrap)
+
+            v-flex.pl-2(xs12)
+              .caption Help
+
+            v-flex.py-2(xs12 d-flex align-center v-for='tip, index in help' :key='index')
+                .px-2.headline.teal--text {{ index + 1 }}
+
+                .pl-3.body-1 {{ tip }}
+
+
+        v-card-actions.px-3
+          v-spacer
+          v-btn.px-4(flat round color='teal accent-4' @click='infoDialog = false') Close
+  //-
 </template>
 
 
@@ -82,6 +126,13 @@
       layers: []
       search: 'H'
       elements: ['', 'H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca', 'Sc', 'Ti', 'V', 'Cr', 'Mn', 'Fe', 'Co', 'Ni', 'Cu', 'Zn', 'Ga', 'Ge', 'As', 'Se', 'Br', 'Kr', 'Rb', 'Sr', 'Y', 'Zr', 'Nb', 'Mo', 'Tc', 'Ru', 'Rh', 'Pd', 'Ag', 'Cd', 'In', 'Sn', 'Sb', 'Te', 'I', 'Xe', 'Cs', 'Ba', 'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu', 'Hf', 'Ta', 'W', 'Re', 'Os', 'Ir', 'Pt', 'Au', 'Hg', 'Tl', 'Pb', 'Bi', 'Po', 'At', 'Rn', 'Fr', 'Ra', 'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu', 'Am', 'Cm', 'Bk', 'Cf', 'Es', 'Fm', 'Md', 'No', 'Lr', 'Rf', 'Db', 'Sg', 'Bh', 'Hs', 'Mt', 'Ds', 'Rg', 'Cn', 'Nh', 'Fl', 'Mc', 'Lv', 'Ts', 'Og']
+
+      infoDialog: false
+      help: [
+        'You can select any element through the slider by its atomic number, or by clicking on the nucleus and typing its initials.'
+        'written below the slider there is the simple notation of the distribution of the electrons, clicking on it expands the complete notation.'
+        'the magnifying glass button does a google search for more information of the selected element, if you have any input error it will be disabled.'
+      ]
 
 
     methods:
@@ -339,7 +390,6 @@
     .truncate
       margin-top: -3px
       font-size: 1.3em
-      color: var(--main-color)
 
 
 
